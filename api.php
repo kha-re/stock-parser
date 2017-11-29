@@ -52,27 +52,3 @@ $data['change200'] = number_format((float)$change200, 2, '.', '');;
 
 header('Content-Type: application/json');
 echo json_encode($data);
-
-/*
-currnet 40  // 
-dma 50  // 
-
-
-50 - 60 = 10 ?
-
-50*40/100 = 20
-
-(dma - curr) = -462
-
-change_percentage = change/(dma/100)  ||
-
-
-
-percentage = change*100/dma
-
-percentage = ((dma - curr)*100)/dma
-
-
-x = CURR * 100 / DMA
-
-x = 988.90 * 100 / 526.35
