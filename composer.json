@@ -1,0 +1,14 @@
+{
+    "name": "amitkhare/stock-parser",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Amit Kumar Khare",
+            "email": "me.amitkhare@gmail.com"
+        }
+    ],
+    "require": {
+        "sunra/php-simple-html-dom-parser": "^1.5",
+        "amitkhare/easy-router": "dev-master"
+    }
+}
