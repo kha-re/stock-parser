@@ -24,7 +24,7 @@
         <div id="app">
             <div class="row">
                 <div class="col-md-4">
-                     <select v-model="selected" v-on:change="fetch()" class="form-control">
+                     <select v-model="selected" v-on:change="refresh()" class="form-control">
                       <option disabled value="">Please select one symbol</option>
                       <option v-for="smbl in symbols">{{smbl}}</option>
                     </select>
@@ -116,8 +116,11 @@
           methods:{
               addSymbol(){
                     if(this.symbolToAdd){
-                        var symbols = localStorage.getItem('symbols');
-                        symbols = JSON.parse(symbols,true);
+                        var symbols=[];
+                        if(localStorage.getItem('symbols')){
+                            symbols = localStorage.getItem('symbols');
+                            symbols = JSON.parse(symbols,true);
+                        }
                         symbols.push(this.symbolToAdd.toUpperCase())
                         this.symbols = symbols;
                         console.log("Added",symbols)
@@ -133,11 +136,6 @@
                     console.log("Removed",symbols)
                     localStorage.setItem('symbols',JSON.stringify(symbols));
                     this.refresh()
-              },
-              fetch(){
-                  
-                  this.refresh()
-                    
               },
               refresh(){
                   console.log(this.selected);
